@@ -17,8 +17,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 
-from SEMNumericalAnalysis import SNA_M1_Utility as M1UTIL
-from SEMNumericalAnalysis import SNA_M2_Image as M2IMG
+from . import SNA_M1_Utility as M1UTIL
+from . import SNA_M2_Image as M2IMG
 
 
 

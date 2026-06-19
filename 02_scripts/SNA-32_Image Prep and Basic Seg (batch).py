@@ -12,9 +12,11 @@ Status: Working.
 import os, sys, cv2, time
 from datetime import datetime
 import pandas as pd
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from SEMNumericalAnalysis import SNA_M1_Utility as M1UTIL
 from SEMNumericalAnalysis import SNA_M2_Image as M2IMG
-import SIS_M4_Segmentation as M4SEG
+from SEMNumericalAnalysis import SNA_M4_Segmentation as M4SEG
 
 
 

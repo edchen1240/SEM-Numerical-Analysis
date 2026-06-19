@@ -17,6 +17,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from SEMNumericalAnalysis import SNA_M1_Utility as M1UTIL
 from SEMNumericalAnalysis import SNA_M2_Image as M2IMG
 from SEMNumericalAnalysis import SNA_M3_Scalebar as M3SCB

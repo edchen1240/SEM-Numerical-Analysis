@@ -16,7 +16,7 @@ from tabulate import tabulate
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-from SEMNumericalAnalysis import SNA_M1_Utility as M1UTIL
+from . import SNA_M1_Utility as M1UTIL
 
 
 

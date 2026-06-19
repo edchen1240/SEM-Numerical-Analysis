@@ -12,6 +12,8 @@ Status: Complete.
 import os, sys, cv2, time
 import pandas as pd
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from SEMNumericalAnalysis import SNA_M1_Utility as M1UTIL
 from SEMNumericalAnalysis import SNA_M2_Image as M2IMG
 
