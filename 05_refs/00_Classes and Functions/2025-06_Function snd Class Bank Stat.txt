@@ -1,0 +1,34 @@
+[Stat of Function snd Class Bank]
+2025-0607-1223
+
+|    | FileName                        |   Line Count |   Word Count |   Size (kB) |
+|----+---------------------------------+--------------+--------------+-------------|
+|  0 | C02_xyzLS.py                    |       163    |       664    |        6.93 |
+|  1 | C03_ImageProcessor.py           |       114    |       411    |        4.86 |
+|  2 | C04_PixelStatistics.py          |       519    |      1938    |       24.4  |
+|  3 | C04_PixelStatistics_bkup.py     |       293    |      1035    |       12.82 |
+|  4 | C05_ColorClustering.py          |       678    |      2359    |       28.57 |
+|  5 | F01_Text.py                     |       164    |       532    |        5.05 |
+|  6 | F02_File.py                     |       744    |      2692    |       27.51 |
+|  7 | F03_Image.py                    |       548    |      2032    |       20.11 |
+|  8 | F04_EXLDF.py                    |       440    |      1474    |       15.02 |
+|  9 | F05_Interaction.py              |        53    |       101    |        0.91 |
+| 10 | F06_Stock.py                    |       557    |      2097    |       24.3  |
+| 11 | F08_LS.py                       |       437    |      1705    |       17.17 |
+| 12 | F09_OMcam.py                    |       226    |       853    |        8.89 |
+| 13 | F10_CA.py                       |       339    |      1163    |       11.74 |
+| 14 | F11_Media.py                    |       329    |       984    |       11.63 |
+| 15 | F12_TTF.py                      |       129    |       573    |        5.46 |
+| 16 | F13_DataAugment.py              |       599    |      2121    |       22.54 |
+| 17 | F15_API.py                      |       232    |       751    |        8.62 |
+| 18 | F15_Char.py                     |       163    |       762    |        7.34 |
+| 19 | F18_Dataset.py                  |       249    |       871    |        8.45 |
+| 20 | F19_GIF.py                      |       126    |       340    |        3.28 |
+| 21 | F22_Renaming.py                 |       302    |       954    |       10.94 |
+| 22 | F27_Web.py                      |        15    |        20    |        0.16 |
+| 23 | F90_combine all codes.py        |       292    |       984    |       11.01 |
+| 24 | F92_function bank statistics.py |       154    |       570    |        5.78 |
+| 25 | Mean                            |       314.6  |      1119.44 |       12.14 |
+| 26 | STD                             |       200.71 |       733.64 |        8.26 |
+
+

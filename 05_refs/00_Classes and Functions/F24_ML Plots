@@ -1,0 +1,130 @@
+"""
+[F24_ML Plots.py]
+Purpose: store function for ILH project.
+Author: Meng-Chi Ed Chen
+Date: 2023-06-06
+Reference:
+    1.
+    2.
+
+Status: Complete.
+"""
+
+import matplotlib.pyplot as plt
+
+
+
+
+
+
+def add_text_in_plot_with_new_line_and_tab(ax, pos_x, pos_y, text, 
+                                           linespace=0.05, ft_size=12, color='gray',
+                                           tab_replacement='    '):
+    #[1] Replace tabs with spaces
+    formatted_text = text.replace("\t", tab_replacement)
+    
+    #[2] Add text line by line
+    lines = formatted_text.split("\n")
+    i_pos_y = pos_y
+    for i, line in enumerate(lines):
+        #[3] Adjust position for each line.
+        if line and (line[0] == '[' or line[-1] == ':'): 
+            i_pos_y -= linespace * 1.5
+        else:
+            i_pos_y -= linespace 
+        
+        #[4] Add text.
+        ax.text(
+            pos_x, i_pos_y,
+            line,
+            transform=ax.transAxes,
+            fontsize=ft_size, 
+            color = color,
+            verticalalignment='top',
+            horizontalalignment='left')    
+
+
+
+
+
+def plot_training_record_only_testing(df_train_record, text_hyperp, path_save=None):
+    """
+    df_train_record.columns = [epoch, training_loss]
+    """
+    fig, ax = plt.subplots(figsize=(10, 6))
+    fs_axis, fs_tick = 14, 12
+
+    # [1] Plot training loss on a single axis
+    ax.set_xlabel('Epoch', fontsize=fs_axis)
+    ax.set_ylabel('Loss', fontsize=fs_axis)
+    ax.plot(df_train_record['epoch'], df_train_record['training_loss'], label='Training Loss', color='tab:blue', linestyle='-', linewidth=2)
+    ax.tick_params(axis='y', labelsize=fs_tick)
+    ax.tick_params(axis='x', labelsize=fs_tick)
+    # Ensure integer ticks on x-axis
+    epochs = df_train_record['epoch']
+    ax.set_xticks([int(e) for e in epochs])
+    ax.set_ylim(bottom=0)
+
+    # [2] Legend
+    ax.legend(['Training Loss'], loc='upper right')
+
+    # [3] Add hyperparameter text
+    add_text_in_plot_with_new_line_and_tab(ax, pos_x=0.02, pos_y=0.35, text=text_hyperp,
+                                           linespace=0.05, ft_size=11, color='dimgray')
+
+    # [4] Final plot adjustments
+    plt.title("Training Loss Over Epochs")
+    plt.grid(True)
+    plt.tight_layout()
+
+    # [5] Save figure if a path is provided
+    if path_save is not None:
+        plt.savefig(path_save)
+
+    # [6] Show the plot
+    plt.show()
+
+
+
+
+def plot_training_record_with_validation(df_train_record, text_hyperp, path_save=None):
+    """
+    df_train_record.columns = [epoch, training_loss, validation_loss]
+    """
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+    fs_axis, fs_tick = 14, 12
+
+    # [1] Plot training and validation loss on the primary y-axis
+    ax1_color = 'tab:green'
+    ax1.set_xlabel('Epoch', fontsize=fs_axis)
+    ax1.set_ylabel('Loss', color=ax1_color, fontsize=fs_axis)
+    ax1.plot(df_train_record['epoch'], df_train_record['training_loss'], label='Training Loss', color='tab:blue', linestyle='-', linewidth=2)
+    ax1.plot(df_train_record['epoch'], df_train_record['validation_loss'], label='Validation Loss', color='tab:orange', linestyle='--', linewidth=2)
+    ax1.tick_params(axis='y', labelcolor=ax1_color, labelsize=fs_tick)
+    ax1.tick_params(axis='x', labelsize=fs_tick)
+    # Ensure integer ticks on x-axis
+    epochs = df_train_record['epoch']
+    ax1.set_xticks([int(e) for e in epochs])
+    ax1.set_ylim(bottom=0)
+
+    # [2] Combine legends
+    lines, labels = ax1.get_legend_handles_labels()
+    ax1.legend(lines, labels, loc='upper right')
+
+    # [3] Add hyperparameter text on the plot using helper function
+    add_text_in_plot_with_new_line_and_tab(ax1, pos_x=0.02, pos_y=0.35, text=text_hyperp,
+                                           linespace=0.05, ft_size=11, color='dimgray')
+
+    # [4] Final plot adjustments
+    plt.title("Training and Validation Loss Over Epochs")
+    plt.grid(True)
+    plt.tight_layout()
+
+    # [5] Save figure if a path is provided
+    if path_save is not None:
+        plt.savefig(path_save)
+
+    # [6] Show the plot
+    plt.show()
+
+
